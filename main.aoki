@@ -1,2 +1,2 @@
-// this is a comment
-print 9
+hi = "heyyo"
+print "heyyo"
