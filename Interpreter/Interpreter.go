@@ -45,15 +45,19 @@ func Run(filePath string) {
 				fmt.Println(args[1 : len(args)-1])
 				// It's checking if the variable exists in the map.
 			} else {
-				// every key in the map is a string.
+				found_var := false
+
 				for key := range variables {
 					if key == args {
 						fmt.Println(variables[key])
+						found_var = true
 					}
+				}
+
+				if !found_var {
+					fmt.Printf("Error: Variable \"%s\" Not Found\n", args)
 				}
 			}
 		}
 	}
-
-	os.WriteFile("variables.txt", []byte(fmt.Sprintf("%v", variables)), 0644)
 }
