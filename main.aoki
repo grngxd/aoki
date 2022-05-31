@@ -1,2 +1,2 @@
 hi = "heyyo"
-print "heyyo"
+print hi

@@ -1,1 +1,1 @@
-map[hi : "heyyo"]
+map[hi:heyyo]

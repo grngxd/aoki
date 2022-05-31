@@ -22,7 +22,7 @@ func Run(filePath string) {
 	}
 
 	readFile.Close()
-	variables := map[string]string{}
+	variables := map[string]interface{}{}
 
 	for _, line := range fileLines {
 		// Checking if the line starts with `//`
@@ -30,7 +30,9 @@ func Run(filePath string) {
 			continue
 		} else if strings.Contains(line, "=") {
 			varName := strings.Split(line, "=")[0]
+			varName = strings.TrimSpace(varName)
 			varValue := strings.Split(line, "=")[1]
+			varValue = strings.TrimSpace(varValue)
 			if strings.HasPrefix(varValue, "\"") && strings.HasSuffix(varValue, "\"") {
 				variables[string(varName)] = string(varValue[1 : len(varValue)-1])
 			} else {
@@ -44,11 +46,9 @@ func Run(filePath string) {
 				// It's checking if the variable exists in the map.
 			} else {
 				// every key in the map is a string.
-				for key, value := range variables {
-					// first we check if the variable exists in the map.
-					if strings.Contains(args, key) {
-						// if it exists we print out the value of the variable.
-						fmt.Println(variables[value])
+				for key := range variables {
+					if key == args {
+						fmt.Println(variables[key])
 					}
 				}
 			}
