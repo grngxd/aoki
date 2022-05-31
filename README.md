@@ -12,7 +12,15 @@ Aoki is a small programming language with the use of nothing.
 # TODO
 
 [x] Simple Interpreter
-[x] Data Types
+[x] Ints
+[x] Strings
 [x] Variables
 [ ] Functions
 ```
+
+## Building
+```shell
+$ git clone https://github.com/monitrr/aoki.git
+$ go get
+$ go build -o dist/aoki.exe
+$ ./aoki.exe run main.aoki

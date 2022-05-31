@@ -2,6 +2,7 @@ package main
 
 import (
 	interpreter "aoki/interpreter"
+	settings "aoki/settings"
 	"fmt"
 	"os"
 	"strings"
@@ -21,6 +22,6 @@ func main() {
 			fmt.Printf("The command \"%s\" does not exist.", args[0])
 		}
 	} else {
-		fmt.Println("Aoki")
+		fmt.Printf("Aoki %s", settings.Version)
 	}
 }
