@@ -1,8 +1,8 @@
 package main
 
 import (
-	interpreter "aoki/interpreter"
-	settings "aoki/settings"
+	interpreter "aoki/Interpreter"
+	settings "aoki/Settings"
 	"fmt"
 	"os"
 	"strings"
